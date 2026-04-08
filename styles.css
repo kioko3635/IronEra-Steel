@@ -1,0 +1,409 @@
+/* Custom CSS for IronEra Steel Ltd Website */
+
+/* Font imports - matching Ubiquity Group */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+/* Custom scrollbar - Always visible */
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll; /* Always show scrollbar */
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+    border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* Headings - Playfair Display font - non-bold like Ubiquity Group */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* Body text - Poppins font */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero section enhancements */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+
+.hero-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Logo styling */
+.logo-placeholder {
+    transition: transform 0.3s ease;
+}
+
+.logo-placeholder:hover {
+    transform: scale(1.05);
+}
+
+/* SDG Icons styling */
+.sdg-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sdg-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Feature boxes styling */
+.feature-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Navigation styling */
+header {
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.1);
+}
+
+/* Text improvements */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Section spacing */
+section {
+    position: relative;
+}
+
+/* WhatsApp button styling */
+#whatsapp-btn {
+    animation: pulse 2s infinite;
+}
+
+#whatsapp-btn:hover {
+    animation: none;
+    transform: scale(1.1);
+}
+
+/* Mobile menu styling */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* Header shadow on scroll */
+header.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Hero section mobile */
+    .hero-section {
+        min-height: 100vh;
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    /* Navigation mobile */
+    .fixed.top-1.left-6 {
+        top: 0.5rem !important;
+        left: 0.5rem !important;
+    }
+    
+    .fixed.top-1.right-6 {
+        top: 0.5rem !important;
+        right: 0.5rem !important;
+    }
+    
+    /* Logos mobile sizing */
+    .fixed.top-1.left-6 img:first-child {
+        height: 4rem !important;
+    }
+    
+    .fixed.top-1.left-6 img:last-child {
+        height: 2rem !important;
+    }
+    
+    /* Menu button mobile */
+    #floating-menu-btn {
+        padding: 0.5rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    /* Floating menu mobile */
+    #floating-menu {
+        width: 12rem !important;
+        right: 0 !important;
+        left: auto !important;
+    }
+    
+    /* About section mobile */
+    #about .flex {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    #about img {
+        height: 8rem !important;
+        margin: 0 auto;
+    }
+    
+    #about .flex-1 {
+        flex: 1 !important;
+        width: 100% !important;
+    }
+    
+    /* Products section mobile */
+    #products .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    #products img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Sustainability section mobile */
+    #sustainability .flex {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    #sustainability img {
+        height: 6rem !important;
+    }
+    
+    /* SDG icons mobile */
+    .sdg-icon {
+        width: 5rem !important;
+        height: 5rem !important;
+    }
+    
+    /* Ubiquity Group section mobile */
+    #ubiquity .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Contact section mobile */
+    #contact .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+    
+    #contact .flex {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    #contact img {
+        height: 6rem !important;
+    }
+    
+    #contact .text-right {
+        text-align: center !important;
+    }
+    
+    /* Text sizing mobile */
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    p, li {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Spacing mobile */
+    .py-16 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .py-24 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    .py-8 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .pl-12 {
+        padding-left: 1rem !important;
+    }
+    
+    /* Container mobile */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Feature boxes mobile */
+    .feature-box {
+        margin-bottom: 1rem;
+        padding: 1rem !important;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    /* Even smaller logos for very small screens */
+    .fixed.top-1.left-6 img:first-child {
+        height: 3rem !important;
+    }
+    
+    .fixed.top-1.left-6 img:last-child {
+        height: 1.5rem !important;
+    }
+    
+    /* Smaller menu button */
+    #floating-menu-btn {
+        width: 2rem !important;
+        height: 2rem !important;
+        padding: 0.25rem !important;
+    }
+    
+    /* Even smaller text */
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Tighter spacing */
+    .py-16 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .py-24 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Contact section styling */
+.contact-section {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* Footer styling */
+footer {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
